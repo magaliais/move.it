@@ -1,4 +1,4 @@
-// Import dos css modules
+// Import css module
 import styles from '../styles/components/ExperienceBar.module.css';
 
 export function ExperienceBar() {
