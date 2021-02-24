@@ -5,7 +5,7 @@ import styles from '../styles/components/Countdown.module.css';
 import { useState, useEffect, useContext } from 'react';
 
 // Import do contexto
-import { ChallengesContext } from '../contexts/ChallengeContext';
+import { ChallengesContext } from '../contexts/ChallengesContext';
 
 // O useEffect é usado da seguinte maneira:
 // 2 argumentos
@@ -20,13 +20,13 @@ let countdownTimeout: NodeJS.Timeout;
 
 export function Countdown() {
 
-    // Usando o contexto
+    // Define quais informações do contexto serão usadas nesse componente
     const { startNewChallenge } = useContext(ChallengesContext);
 
 
 
     // Desclaração dos Estados do React (useState)
-    const [time, setTime] = useState(0.05 * 60);
+    const [time, setTime] = useState(25 * 60);
     const [isActive, setIsActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);
 
@@ -46,7 +46,7 @@ export function Countdown() {
     function resetCountdown() {
         clearTimeout(countdownTimeout);
         setIsActive(false);
-        setTime(0.05 * 60);
+        setTime(25 * 60);
     }
 
     // Lógica para a contagem regressiva

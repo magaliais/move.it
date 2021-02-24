@@ -1,5 +1,5 @@
 // Import do contexto (integração entre os components)
-import { ChallengesContext, ChallengesProvider } from '../contexts/ChallengeContext'
+import { ChallengesContext, ChallengesProvider } from '../contexts/ChallengesContext'
 
 import '../styles/global.css'
 
