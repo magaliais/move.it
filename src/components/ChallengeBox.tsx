@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 
-// Import do contexto
+// Import dos contextos
 import { ChallengesContext } from '../contexts/ChallengesContext';
+import { CountdownContext } from '../contexts/CountdownContext';
 
 // Import css module
 import styles from '../styles/components/ChallengeBox.module.css';
@@ -9,8 +10,18 @@ import styles from '../styles/components/ChallengeBox.module.css';
 export function ChallengeBox() {
 
     // Define quais informações do contexto serão usadas nesse componente
-    const { activeChallenge, resetChallenge } = useContext(ChallengesContext);
+    const { activeChallenge, resetChallenge, completeChallenge } = useContext(ChallengesContext);
+    const { resetCountdown } = useContext(CountdownContext);
 
+    function handleChallengeSucceeded() {
+        completeChallenge();
+        resetCountdown();
+    }
+
+    function handleChallengeFailed() {
+        resetChallenge();
+        resetCountdown();
+    }
 
 
     return (
@@ -29,7 +40,7 @@ export function ChallengeBox() {
                         <button 
                             type="button"
                             className={ styles.challengeFailedButton } 
-                            onClick={resetChallenge}
+                            onClick={handleChallengeFailed}
                         >
                             Falhei
                         </button>
@@ -37,6 +48,7 @@ export function ChallengeBox() {
                         <button 
                             type="button"
                             className={ styles.challengeSucceededButton }
+                            onClick={handleChallengeSucceeded}
                         >
                             Completei
                         </button>

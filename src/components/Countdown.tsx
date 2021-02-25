@@ -5,7 +5,7 @@ import styles from '../styles/components/Countdown.module.css';
 import { useState, useEffect, useContext } from 'react';
 
 // Import do contexto
-import { ChallengesContext } from '../contexts/ChallengesContext';
+import { CountdownContext } from '../contexts/CountdownContext';
 
 // O useEffect é usado da seguinte maneira:
 // 2 argumentos
@@ -16,53 +16,14 @@ import { ChallengesContext } from '../contexts/ChallengesContext';
 //
 // sempre que o valor de 'isActive' mudar, a função será executada
 
-let countdownTimeout: NodeJS.Timeout;
-
 export function Countdown() {
 
-    // Define quais informações do contexto serão usadas nesse componente
-    const { startNewChallenge } = useContext(ChallengesContext);
-
-
-
-    // Desclaração dos Estados do React (useState)
-    const [time, setTime] = useState(25 * 60);
-    const [isActive, setIsActive] = useState(false);
-    const [hasFinished, setHasFinished] = useState(false);
-
-    // Manipula o 'time' para transformar em minutos e segundos
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
+    const { minutes, seconds, hasFinished, isActive, resetCountdown, startCountdown } = useContext(CountdownContext);
 
     // Lógica para pegar a primeira e segunda casa dos minutos e segundos
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
     const [secondLeft, secondRight] = String(seconds).padStart(2,'0').split('');
 
-    function startCountdown() {
-        setIsActive(true);
-    }
-
-    // Lógica para resetar a contagem
-    function resetCountdown() {
-        clearTimeout(countdownTimeout);
-        setIsActive(false);
-        setTime(25 * 60);
-    }
-
-    // Lógica para a contagem regressiva
-    // Muda o estado do isActive e ativa a primeira redução de um segundo.
-    // Quando o segundo é reduzido, o useEffect é acionado de novo, modificando mais um segundo
-    useEffect(() => {
-        if(isActive && time > 0) {
-            countdownTimeout = setTimeout(() => {
-                setTime(time - 1);
-            }, 1000)
-        } else if (isActive && time == 0) {
-            setHasFinished(true);
-            setIsActive(false);
-            startNewChallenge();    // Função do contexto
-        }
-    }, [isActive, time])
 
     return (
         <div>
