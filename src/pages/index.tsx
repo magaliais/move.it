@@ -32,7 +32,7 @@ export default function Home(props) {
     <ChallengesProvider 
       level={props.level} 
       currentExperience={props.currentExperience} 
-      challengesCompleted={props.completedChallenges}
+      challengesCompleted={props.challengesCompleted}
     >
       <div className={ styles.container }>
         <Head>
