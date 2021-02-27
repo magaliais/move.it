@@ -19,7 +19,7 @@
     <li><a href="#about">About it</a></li>
     <li><a href="#techs">Tecnologias Utilizadas</a></li>    <!-- -->
     <li><a href="#layout">Layout</a></li>    <!-- -->
-    <li><a href="#funcs">Funcionalidades</a></li>    <!-- -->
+    <li><a href="#run">How to run</a></li>    <!-- -->
     <li><a href="#goals">Ideias</a></li>    <!-- -->
     <li><a href="#contribute">How to contribute</a></li>    <!-- -->
 </ul>
@@ -62,38 +62,50 @@
 
 <h2 id="layout">🔖 Layout</h2>
 
-You can view the inicial layout of the project at <a href="https://www.figma.com/file/m3yboywRJO2H04cvYQXevo/Move.it-1.0-(Copy)?node-id=160%3A2761" target="_blank">Move.it - layout</a>. You must have a <a href="https://www.figma.com/" target="_blank">Figma</a> account in order to access it. The final layout can be visualized <a href="https://www.figma.com/file/mt52N4YoKzAOYslPbjJFCt/Move.it-2.0-(Copy)?node-id=160%3A2761" target="_blank">here</a>.
+&nbsp;&nbsp;&nbsp;&nbsp;You can view the inicial layout of the project at <a href="https://www.figma.com/file/m3yboywRJO2H04cvYQXevo/Move.it-1.0-(Copy)?node-id=160%3A2761" target="_blank">Move.it - layout</a>. You must have a <a href="https://www.figma.com/" target="_blank">Figma</a> account in order to access it. The final layout can be visualized <a href="https://www.figma.com/file/mt52N4YoKzAOYslPbjJFCt/Move.it-2.0-(Copy)?node-id=160%3A2761" target="_blank">here</a>.
 
 <br>
 
 ---
 
-<h2 id="funcs">⚙️ Funcionalidades</h2>
+<h2 id="run">⚙️ How to Run</h2>
 
-<!-- <br>
+&nbsp;&nbsp;&nbsp;&nbsp;To run the application locally, you must first install <a href="https://git-scm.com" target="_blank">Git</a>, <a href="https://nodejs.org/en/" target="_blank">Node.js</a> and <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>.
 
- - [ ] Site disponível e hospedado, onde os usuários podem:
-    - [x] Criar transações de entrada
-    - [x] Criar transações de saída
-    - [x] Adicionar descrições para as transações
-    - [x] Adicionar a data da transação
-- [x] Os usuários tem acesso ao site responsivo no mobile; -->
+<br>
+
+<h3>🧭 Running the application</h3>
+
+<br>
+
+```bash
+# Clone this repository
+git clone https://github.com/magaliais/proffy
+
+# Find the directory
+cd move.it
+
+# Download dependencies
+yarn
+
+# Run the application
+yarn dev
+
+# Open your browser at
+https://localhost:3000
+```
 
 <br>
 
 ---
 
-<h2 id="goals">💡 Ideias</h2>
+<h2 id="goals">💡 Ideas</h2>
 
-<!-- <br>
+<br>
 
-- [x] Adicionar um favicon à aba;
-- [x] Adicionar o método checagem de total ao `DOM.updateBalance()`, a fim de verificar o saldo final e alternar a cor do card entre verde ou vermelho de acordo com o resultado final do balanço;
-- [x] Adicionar a funcionalidade de deixar os dados das transações salvas no navegador para a próxima vez que o site seja acessado;
-- [ ] Adicionar `toggleTheme()` para alternar a aplicação entre <strong>modo noturno</strong> ou diurno;
-- [ ] Implementar possibilidade de <strong>editar</strong> uma transação já adicionada;
-- [ ] Adicionar input ao modal de cadastrar Nova Transação, que possibilita a categorização do tipo de transação realizada (Casa,
-Trabalho, Alimentação, Lazer, Atividade extra, etc); -->
+- [ ] Add landing page;
+- [ ] Add login with github account (<a href="https://docs.github.com/pt/developers/apps/authorizing-oauth-apps" target="_blank">Oauth Github</a>) (<a href="https://www.youtube.com/watch?v=Cz55Jmhfw84&ab_channel=Rocketseat" target="_blank">Serveless com Next.js</a>);
+- [ ] Add dark theme;
 
 <br>
 
