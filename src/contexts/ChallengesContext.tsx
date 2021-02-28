@@ -6,6 +6,9 @@ import challenges from '../../challenges.json';
 
 import { LevelUpModal } from '../components/LevelUpModal';
 
+// Fix do bug de notificação em mobile
+import { isMobile } from 'react-device-detect';
+
 // tipagem dos dados do .json
 interface Challenge {
     type: 'body' | 'eye';
@@ -80,7 +83,7 @@ export function ChallengesProvider({
 
         new Audio('/notification.mp3').play();
 
-        if(Notification.permission == 'granted') {
+        if(!isMobile && Notification.permission == 'granted') {
             new Notification('Novo desafio 🎉', {
                 body: `Valendo ${challenge.amount} xp!`,
                 icon: '/favicon.png',
