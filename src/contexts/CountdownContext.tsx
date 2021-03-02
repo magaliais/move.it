@@ -37,7 +37,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
 
     
     // Desclaração dos Estados do React (useState)
-    const [time, setTime] = useState(0.05 * 60);
+    const [time, setTime] = useState(25 * 60);
     const [isActive, setIsActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);
 
@@ -57,7 +57,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         clearTimeout(countdownTimeout);
         setIsActive(false);
         setHasFinished(false);
-        setTime(0.05 * 60);
+        setTime(25 * 60);
     }
 
     // Lógica para a contagem regressiva
