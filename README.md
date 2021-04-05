@@ -80,7 +80,7 @@
 
 ```bash
 # Clone this repository
-git clone https://github.com/magaliais/proffy
+git clone https://github.com/magaliais/move.it
 
 # Find the directory
 cd move.it
