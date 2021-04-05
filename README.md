@@ -46,7 +46,7 @@
 
 ---
 
-<h2 id="techs">🛠 Tecnologias e Ferramentas Utilizadas</h2>
+<h2 id="techs">🛠 Languages, techs and tools</h2>
 
 <br>
 
